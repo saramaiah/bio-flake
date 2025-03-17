@@ -12,15 +12,15 @@ rPackages.buildRPackage {
     hash = "sha256-tQXes2KRHFpH8mSY4DCdqBHzcMx0okt1SbN6XdLESVU=";
   };
   propagatedBuildInputs = with rPackages; [
-    cli
-    crayon
-    hdf5r
-    Matrix
-    R6
-    rlang
-    Seurat
-    SeuratObject
-    stringi
+    cli 
+    crayon 
+    hdf5r 
+    Matrix 
+    R6 
+    rlang 
+    Seurat 
+    SeuratObject 
+    stringi 
     withr
   ];
 }

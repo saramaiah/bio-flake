@@ -1,13 +1,17 @@
-{pkgs ? import <nixpkgs> {}, ...}:
-pkgs.rPackages.buildRPackage {
+{
+  rPackages,
+  fetchFromGitHub,
+  ...
+}:
+rPackages.buildRPackage {
   name = "monocle3";
-  src = pkgs.fetchFromGitHub {
+  src = fetchFromGitHub {
     owner = "cole-trapnell-lab";
     repo = "monocle3";
     rev = "b545460966874948eb11a57a225594a107f1694d";
     hash = "sha256-d18KgC8+XF1TlgA3j2zKU3ud8LJz3A1LmR2E4XGvQCk=";
   };
-  propagatedBuildInputs = with pkgs.rPackages; [
+  propagatedBuildInputs = with rPackages; [
     assertthat
     dplyr
     future
