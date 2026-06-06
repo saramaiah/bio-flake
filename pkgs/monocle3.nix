@@ -3,6 +3,11 @@
   fetchFromGitHub,
   ...
 }:
+let
+  grr-broken = rPackages.grr.overrideAttrs (old: {
+    meta = old.meta // { broken = false; };
+  });
+in
 rPackages.buildRPackage {
   name = "monocle3";
   src = fetchFromGitHub {
@@ -16,7 +21,8 @@ rPackages.buildRPackage {
     dplyr
     future
     ggrepel
-    grr
+    # grr <- removed, grr v0.9.5 is broken
+    grr-broken
     leidenbase
     lmtest
     openssl
