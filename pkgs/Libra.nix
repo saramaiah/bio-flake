@@ -12,7 +12,7 @@ rPackages.buildRPackage {
     hash = "sha256-xmr8cXi7CAMF+FNV86NB8rYrcLfNprey8cZL0afBQwU=";
     fetchSubmodules = true;
   };
-  nativeBuildInputs = with rPackages; [
+  propagatedBuildInputs = with rPackages; [
     dplyr
     purrr
     tibble
